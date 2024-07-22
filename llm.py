@@ -43,7 +43,7 @@ def get_names_from_file(filename):
 names = get_names_from_file('names.txt')
 
 # URL of the target server
-# url = os.getenv("URL")
+url = os.getenv("URL")
 
 # Iterate through each name in the list and send a request to the server
 for i, name in enumerate(names, start=1):
