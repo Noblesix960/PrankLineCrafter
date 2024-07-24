@@ -1,10 +1,9 @@
 import unittest
 from unittest.mock import patch, MagicMock
 from prank_line_crafter.story_generator import generate_complete_story
-from main import get_names_from_file, main
+from main import get_names_from_file
 import os
-import io
-import sys
+
 
 class TestMain(unittest.TestCase):
 
@@ -39,6 +38,7 @@ class TestMain(unittest.TestCase):
 
         # Assert that the names list matches the expected list
         self.assertEqual(names, ['Alice', 'Bob', 'Charlie'])
+
 
 if __name__ == '__main__':
     unittest.main()

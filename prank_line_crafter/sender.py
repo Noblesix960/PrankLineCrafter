@@ -1,6 +1,7 @@
 import requests
 from .config import URL
 
+
 def send_story(name, story):
     """Send the generated story to the server."""
     data = {
