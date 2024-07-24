@@ -1,13 +1,14 @@
 import unittest
 from unittest.mock import patch, MagicMock
-from main import generate_complete_story, get_names_from_file
+from prank_line_crafter.story_generator import generate_complete_story
+from main import get_names_from_file, main
 import os
-
+import io
+import sys
 
 class TestMain(unittest.TestCase):
 
-    # Patch the 'run' method of the 'llama' object in the 'main' module
-    @patch('main.llama.run')
+    @patch('prank_line_crafter.story_generator.LlamaAPI.run')
     def test_generate_complete_story(self, mock_run):
         # Mock the JSON response of the API call
         mock_response = MagicMock()
@@ -38,7 +39,6 @@ class TestMain(unittest.TestCase):
 
         # Assert that the names list matches the expected list
         self.assertEqual(names, ['Alice', 'Bob', 'Charlie'])
-
 
 if __name__ == '__main__':
     unittest.main()
