@@ -1,12 +1,14 @@
 from llamaapi import LlamaAPI
 from .config import LLAMA_API_TOKEN
 
+
 def generate_complete_story(name):
     """Generate a funny story about the given name using LlamaAPI."""
     llama = LlamaAPI(LLAMA_API_TOKEN)
     api_request_json = {
         "messages": [
-            {"role": "user", "content": f"Generate a funny story about a person named {name}."}
+            {"role": "user",
+             "content": f"Generate a funny story about a person named {name}"}
         ],
         "max_tokens": 500,
         "stream": False
