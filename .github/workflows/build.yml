@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      LLAMA_API_TOKEN: ${{ secrets.LLAMA_API_TOKEN }}
-      URL: ${{ secrets.URL }}
+      LLAMA_API_TOKEN: ${{ secrets.dev.LLAMA_API_TOKEN }}
+      URL: ${{ secrets.dev.URL }}
 
     steps:
     - name: Checkout repository
