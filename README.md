@@ -11,14 +11,12 @@ PrankLineCrafter is a Python script that generates humorous stories based on nam
 
 ## Requirements
 
-- Python 3.6 or higher
+- Python 3.9 or higher
 - `requests` library
 - `llamaapi` library
 - `python-dotenv` library
 
-## Setup
-
-To set up and run the script, follow these steps:
+## Setup and Usage
 
 1. Clone this repository:
 
@@ -42,22 +40,14 @@ To set up and run the script, follow these steps:
 
    Replace `your_llama_api_token` with your LlamaAPI token and `your_target_url` with the URL of the server where you want to send the generated stories.
 
-## Usage
+4. Prepare a `names.txt` file in the root directory with one name per line.
 
-1. Prepare a `names.txt` file in the root directory with one name per line.
-
-2. Run the `llm.py` script:
+5. Run the script:
 
     ```bash
-    python llm.py
+    python main.py
     ```
-
-   The script will read names from `names.txt`, generate a story for each name, and send the results to the specified URL.
-
-## Configuration
-
-- **LLAMA_API_TOKEN**: Your LlamaAPI token for accessing the API.
-- **URL**: The target server URL where the POST requests will be sent.
+    The script will read names from names.txt, generate a story for each name, and send the results to the specified server.
 
 ## Error Handling
 
