@@ -1,2 +1,2 @@
-requests
-llamaapi
+requests==2.32.3
+llamaapi==0.1.36
