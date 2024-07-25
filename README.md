@@ -1,5 +1,7 @@
 # PrankLineCrafter
 
+*PrankLineCrafter is an idea by [tuxerrante](https://github.com/tuxerrante).*
+
 PrankLineCrafter is a Python script that generates humorous stories based on names provided in a text file and submits these stories to a server via HTTP POST requests. The stories are generated using the LlamaAPI, which is integrated into the script to create engaging and amusing content.
 
 ## Features
@@ -21,8 +23,8 @@ PrankLineCrafter is a Python script that generates humorous stories based on nam
 1. Clone this repository:
 
     ```bash
-    git clone https://github.com/yourusername/your-repository.git
-    cd your-repository
+    git clone https://github.com/Noblesix960/PrankLineCrafter.git
+    cd PrankLineCrafter
     ```
 
 2. Install the required packages:
