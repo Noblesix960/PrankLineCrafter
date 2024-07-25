@@ -1,5 +1,6 @@
 from prank_line_crafter.story_generator import generate_complete_story
 from prank_line_crafter.sender import send_story
+import sys
 
 
 def get_names_from_file(filename):
@@ -13,8 +14,7 @@ def get_names_from_file(filename):
         return []
 
 
-def main():
-    names_file = 'names.txt'
+def main(names_file='names.txt'):
     names = get_names_from_file(names_file)
 
     for i, name in enumerate(names, start=1):
@@ -29,4 +29,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    if len(sys.argv) > 1:
+        main(sys.argv[1])
+    else:
+        main()
