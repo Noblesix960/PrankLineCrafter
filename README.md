@@ -6,7 +6,7 @@ PrankLineCrafter is a Python script that generates humorous stories based on nam
 
 ## Features
 
-- Reads names from a `names.txt` file.
+- Reads names from a `names.txt` file or from a specified file path.
 - Generates a funny story for each name using the LlamaAPI.
 - Sends each name and its corresponding story to a specified server URL via HTTP POST requests.
 - Handles environment variables for sensitive information such as API tokens and server URLs.
@@ -51,9 +51,17 @@ PrankLineCrafter is a Python script that generates humorous stories based on nam
     ```
     The script will read names from names.txt, generate a story for each name, and send the results to the specified server.
 
+6. (Optional) To specify a different file containing the names, provide the file path as an argument:
+
+    ```bash
+    python main.py path/to/your/other_names.txt
+    ```
+
+    If no file path is provided, the script defaults to using `names.txt`.
+
 ## Error Handling
 
-- If the `names.txt` file is missing, the script will notify you with an error message.
+- If the specified file (or `names.txt` if no file is specified) is missing, the script will notify you with an error message.
 - If the server responds with an error, the script will print the status code for debugging purposes.
 
 ## Example
