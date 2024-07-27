@@ -24,17 +24,20 @@ jobs:
 
     - name: Install dependencies
       run: |
-        python -m venv venv
-        . venv/bin/activate
+        python -m pip install --upgrade pip
         pip install -r requirements.txt
+        export PYTHONPATH=/opt/hostedtoolcache/Python/3.9.19/x64/lib/python3.9/site-packages
 
     - name: Run tests
       run: |
-        . venv/bin/activate
         python -m unittest discover tests
 
-    - name: Lint code
-      run: |
-        . venv/bin/activate
-        pip install flake8
-        flake8 .
+    - name: Python Linter
+      uses: sunnysid3up/python-linter@master
+      with:
+        source: "prank_line_crafter/"
+        mypy-options: "--ignore-missing-imports --show-error-codes"
+        pylint-options: "--rcfile=.pylintrc"
+        isort-options: "-w 100"
+      
+      
