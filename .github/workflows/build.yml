@@ -37,6 +37,7 @@ jobs:
       with:
         source: "prank_line_crafter/"
         mypy-options: "--ignore-missing-imports --show-error-codes"
+        pylint-options: "--rcfile=.pylintrc"
         isort-options: "-w 100"
       
       
