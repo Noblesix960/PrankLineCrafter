@@ -1,12 +1,27 @@
-from prank_line_crafter.story_generator import generate_complete_story
-from prank_line_crafter.sender import send_story
+"""
+Main module for prank_line_crafter.
+
+This module reads names from a file, generates funny stories using LlamaAPI, 
+and sends them to a server.
+"""
+
 import sys
+
+from prank_line_crafter.sender import send_story
+from prank_line_crafter.story_generator import generate_complete_story
 
 
 def get_names_from_file(filename):
-    """Read names from the specified file."""
+    """Read names from the specified file.
+
+    Args:
+        filename (str): The path to the file containing the names.
+
+    Returns:
+        list: A list of names read from the file.
+    """
     try:
-        with open(filename, 'r') as file:
+        with open(filename, "r", encoding="utf-8") as file:  # Specify encoding
             names = file.readlines()
             return [name.strip() for name in names if name.strip()]
     except FileNotFoundError:
@@ -14,7 +29,12 @@ def get_names_from_file(filename):
         return []
 
 
-def main(names_file='names.txt'):
+def main(names_file="names.txt"):
+    """Main function to process names and generate/send stories.
+
+    Args:
+        names_file (str, optional): The path to the file containing the names. Default: "names.txt".
+    """
     names = get_names_from_file(names_file)
 
     for i, name in enumerate(names, start=1):
